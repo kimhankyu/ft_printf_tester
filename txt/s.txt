@@ -1,0 +1,273 @@
+TEST s
+=====================================================
+flag : X / Width : X / precision : X
+"%s"		|abc|	ret : 3
+=====================================================
+flag : X / Width : X / precision : number
+"%.s"		||	ret : 0
+"%.1s"		|a|	ret : 1
+"%.2s"		|ab|	ret : 2
+"%.3s"		|abc|	ret : 3
+"%.4s"		|abc|	ret : 3
+"%.5s"		|abc|	ret : 3
+"%.6s"		|abc|	ret : 3
+=====================================================
+flag : X / Width : X / precision : wildcard
+"%.*s"	*: 0		||	ret : 0
+"%.*s"	*: 1		|a|	ret : 1
+"%.*s"	*: 2		|ab|	ret : 2
+"%.*s"	*: 3		|abc|	ret : 3
+"%.*s"	*: 4		|abc|	ret : 3
+"%.*s"	*: 5		|abc|	ret : 3
+"%.*s"	*: 6		|abc|	ret : 3
+"%.*s"	*:-1		|abc|	ret : 3
+"%.*s"	*:-2		|abc|	ret : 3
+"%.*s"	*:-3		|abc|	ret : 3
+"%.*s"	*:-4		|abc|	ret : 3
+"%.*s"	*:-5		|abc|	ret : 3
+"%.*s"	*:-6		|abc|	ret : 3
+=====================================================
+flag : X / Width : number / precision : X
+"%1s"		|abc|	ret : 3
+"%2s"		|abc|	ret : 3
+"%3s"		|abc|	ret : 3
+"%4s"		| abc|	ret : 4
+"%5s"		|  abc|	ret : 5
+"%6s"		|   abc|	ret : 6
+=====================================================
+flag : X / Width : number / precision : number
+"%1.s"		| |	ret : 1
+"%1.0s"		| |	ret : 1
+"%1.3s"		|abc|	ret : 3
+"%1.4s"		|abc|	ret : 3
+"%1.5s"		|abc|	ret : 3
+"%1.6s"		|abc|	ret : 3
+"%2.s"		|  |	ret : 2
+"%2.0s"		|  |	ret : 2
+"%2.1s"		| a|	ret : 2
+"%2.2s"		|ab|	ret : 2
+"%2.3s"		|abc|	ret : 3
+"%2.4s"		|abc|	ret : 3
+"%2.5s"		|abc|	ret : 3
+"%2.6s"		|abc|	ret : 3
+"%3.2s"		| ab|	ret : 3
+"%3.3s"		|abc|	ret : 3
+"%3.4s"		|abc|	ret : 3
+"%4.2s"		|  ab|	ret : 4
+"%4.3s"		| abc|	ret : 4
+"%4.4s"		| abc|	ret : 4
+"%4.5s"		| abc|	ret : 4
+"%4.6s"		| abc|	ret : 4
+=====================================================
+flag : X / Width : number / precision : wildcard
+"%2.*s"	*: 0		|  |	ret : 2
+"%2.*s"	*: 3		|abc|	ret : 3
+"%2.*s"	*: 4		|abc|	ret : 3
+"%2.*s"	*:-1		|abc|	ret : 3
+"%2.*s"	*:-2		|abc|	ret : 3
+"%2.*s"	*:-3		|abc|	ret : 3
+"%2.*s"	*:-4		|abc|	ret : 3
+"%3.*s"	*: 2		| ab|	ret : 3
+"%3.*s"	*: 3		|abc|	ret : 3
+"%3.*s"	*: 4		|abc|	ret : 3
+"%3.*s"	*:-4		|abc|	ret : 3
+"%4.*s"	*: 0		|    |	ret : 4
+"%4.*s"	*:-1		| abc|	ret : 4
+"%4.*s"	*: 4		| abc|	ret : 4
+"%4.*s"	*: 5		| abc|	ret : 4
+"%4.*s"	*:-5		| abc|	ret : 4
+=====================================================
+flag : X / Width : wildcard / precision : X
+"%*s"	*: 0		|abc|	ret : 3
+"%*s"	*: 1		|abc|	ret : 3
+"%*s"	*: 2		|abc|	ret : 3
+"%*s"	*: 3		|abc|	ret : 3
+"%*s"	*: 4		| abc|	ret : 4
+"%*s"	*: 5		|  abc|	ret : 5
+"%*s"	*: 6		|   abc|	ret : 6
+"%*s"	*:-1		|abc|	ret : 3
+"%*s"	*:-2		|abc|	ret : 3
+"%*s"	*:-3		|abc|	ret : 3
+"%*s"	*:-4		|abc |	ret : 4
+"%*s"	*:-5		|abc  |	ret : 5
+"%*s"	*:-6		|abc   |	ret : 6
+=====================================================
+flag : X / Width : wildcard / precision : number
+"%*.s"	*: 0		||	ret : 0
+"%*.0s"	*: 1		| |	ret : 1
+"%*.4s"	*: 2		|abc|	ret : 3
+"%*.1s"	*: 3		|  a|	ret : 3
+"%*.5s"	*: 4		| abc|	ret : 4
+"%*.1s"	*: 5		|    a|	ret : 5
+"%*.6s"	*: 6		|   abc|	ret : 6
+"%*.0s"	*:-1		| |	ret : 1
+"%*.4s"	*:-2		|abc|	ret : 3
+"%*.3s"	*:-3		|abc|	ret : 3
+"%*.3s"	*:-4		|abc |	ret : 4
+"%*.3s"	*: 4		| abc|	ret : 4
+"%*.5s"	*: 3		|abc|	ret : 3
+=====================================================
+flag : X / Width : wildcard / precision : wildcard
+"%*.*s"	*: 0 *: 0		||	ret : 0
+"%*.*s"	*: 1 *: 0		| |	ret : 1
+"%*.*s"	*: 2 *: 4		|abc|	ret : 3
+"%*.*s"	*: 3 *: 1		|  a|	ret : 3
+"%*.*s"	*: 4 *: 5		| abc|	ret : 4
+"%*.*s"	*: 5 *: 1		|    a|	ret : 5
+"%*.*s"	*: 6 *: 6		|   abc|	ret : 6
+"%*.*s"	*:-1 *: 0		| |	ret : 1
+"%*.*s"	*:-2 *: 4		|abc|	ret : 3
+"%*.*s"	*:-3 *: 3		|abc|	ret : 3
+"%*.*s"	*:-4 *: 3		|abc |	ret : 4
+"%*.*s"	*: 4 *: 3		| abc|	ret : 4
+"%*.*s"	*: 3 *: 5		|abc|	ret : 3
+"%*.*s"	*: 2 *:-4		|abc|	ret : 3
+"%*.*s"	*: 3 *:-1		|abc|	ret : 3
+"%*.*s"	*: 4 *:-5		| abc|	ret : 4
+"%*.*s"	*: 5 *:-1		|  abc|	ret : 5
+"%*.*s"	*: 6 *:-6		|   abc|	ret : 6
+"%*.*s"	*:-6 *:-6		|abc   |	ret : 6
+=====================================================
+flag : 0 / Width : X / precision : X
+undefined behavier
+=====================================================
+flag : 0 / Width : X / precision : number
+undefined behavier
+=====================================================
+flag : 0 / Width : X / precision : wildcard
+undefined behavier
+=====================================================
+flag : 0 / Width : number / precision : X
+undefined behavier
+=====================================================
+flag : 0 / Width : number / precision : number
+undefined behavier
+=====================================================
+flag : 0 / Width : number / precision : wildcard
+undefined behavier
+=====================================================
+flag : 0 / Width : wildcard / precision : X
+undefined behavier
+=====================================================
+flag : 0 / Width : wildcard / precision : number
+undefined behavier
+=====================================================
+flag : 0 / Width : wildcard / precision : wildcard
+undefined behavier
+=====================================================
+flag : - / Width : X / precision : X
+"%-s"		|abc|	ret : 3
+=====================================================
+flag : - / Width : X / precision : number
+"%-.s"		||	ret : 0
+"%-.0s"		||	ret : 0
+"%-.1s"		|a|	ret : 1
+"%-.2s"		|ab|	ret : 2
+"%-.3s"		|abc|	ret : 3
+"%-.4s"		|abc|	ret : 3
+"%-.5s"		|abc|	ret : 3
+"%-.6s"		|abc|	ret : 3
+=====================================================
+flag : - / Width : X / precision : wildcard
+"%-.*s"	*: 0		||	ret : 0
+"%-.*s"	*: 1		|a|	ret : 1
+"%-.*s"	*: 2		|ab|	ret : 2
+"%-.*s"	*: 3		|abc|	ret : 3
+"%-.*s"	*: 4		|abc|	ret : 3
+"%-.*s"	*: 5		|abc|	ret : 3
+"%-.*s"	*: 6		|abc|	ret : 3
+"%-.*s"	*:-1		|abc|	ret : 3
+"%-.*s"	*:-2		|abc|	ret : 3
+"%-.*s"	*:-3		|abc|	ret : 3
+"%-.*s"	*:-4		|abc|	ret : 3
+"%-.*s"	*:-5		|abc|	ret : 3
+"%-.*s"	*:-6		|abc|	ret : 3
+=====================================================
+flag : - / Width : number / precision : X
+"%-1s"		|abc|	ret : 3
+"%-2s"		|abc|	ret : 3
+"%-3s"		|abc|	ret : 3
+"%-4s"		|abc |	ret : 4
+"%-5s"		|abc  |	ret : 5
+"%-6s"		|abc   |	ret : 6
+=====================================================
+flag : - / Width : number / precision : number
+"%-2.s"		|  |	ret : 2
+"%-2.0s"		|  |	ret : 2
+"%-2.3s"		|abc|	ret : 3
+"%-2.4s"		|abc|	ret : 3
+"%-3.2s"		|ab |	ret : 3
+"%-3.3s"		|abc|	ret : 3
+"%-3.4s"		|abc|	ret : 3
+"%-4.3s"		|abc |	ret : 4
+"%-4.4s"		|abc |	ret : 4
+"%-4.5s"		|abc |	ret : 4
+=====================================================
+flag : - / Width : number / precision : wildcard
+"%-2.*s"	*: 0		|  |	ret : 2
+"%-2.*s"	*: 3		|abc|	ret : 3
+"%-2.*s"	*: 4		|abc|	ret : 3
+"%-2.*s"	*:-1		|abc|	ret : 3
+"%-2.*s"	*:-2		|abc|	ret : 3
+"%-2.*s"	*:-3		|abc|	ret : 3
+"%-2.*s"	*:-4		|abc|	ret : 3
+"%-3.*s"	*: 2		|ab |	ret : 3
+"%-3.*s"	*: 3		|abc|	ret : 3
+"%-3.*s"	*: 4		|abc|	ret : 3
+"%-3.*s"	*:-4		|abc|	ret : 3
+"%-4.*s"	*: 0		|    |	ret : 4
+"%-4.*s"	*:-1		|abc |	ret : 4
+"%-4.*s"	*: 4		|abc |	ret : 4
+"%-4.*s"	*: 5		|abc |	ret : 4
+"%-4.*s"	*:-5		|abc |	ret : 4
+=====================================================
+flag : - / Width : wildcard / precision : X
+"%-*s"	*: 0		|abc|	ret : 3
+"%-*s"	*: 1		|abc|	ret : 3
+"%-*s"	*: 2		|abc|	ret : 3
+"%-*s"	*: 3		|abc|	ret : 3
+"%-*s"	*: 4		|abc |	ret : 4
+"%-*s"	*: 5		|abc  |	ret : 5
+"%-*s"	*: 6		|abc   |	ret : 6
+"%-*s"	*:-1		|abc|	ret : 3
+"%-*s"	*:-2		|abc|	ret : 3
+"%-*s"	*:-3		|abc|	ret : 3
+"%-*s"	*:-4		|abc |	ret : 4
+"%-*s"	*:-5		|abc  |	ret : 5
+"%-*s"	*:-6		|abc   |	ret : 6
+=====================================================
+flag : - / Width : wildcard / precision : number
+"%-*.s"	*: 0		||	ret : 0
+"%-*.0s"	*: 1		| |	ret : 1
+"%-*.4s"	*: 2		|abc|	ret : 3
+"%-*.1s"	*: 3		|a  |	ret : 3
+"%-*.5s"	*: 4		|abc |	ret : 4
+"%-*.1s"	*: 5		|a    |	ret : 5
+"%-*.6s"	*: 6		|abc   |	ret : 6
+"%-*.0s"	*:-1		| |	ret : 1
+"%-*.4s"	*:-2		|abc|	ret : 3
+"%-*.3s"	*:-3		|abc|	ret : 3
+"%-*.3s"	*:-4		|abc |	ret : 4
+"%-*.3s"	*: 4		|abc |	ret : 4
+"%-*.5s"	*: 3		|abc|	ret : 3
+=====================================================
+flag : - / Width : wildcard / precision : wildcard
+"%-*.*s"	*: 0 *: 0		||	ret : 0
+"%-*.*s"	*: 1 *: 0		| |	ret : 1
+"%-*.*s"	*: 2 *: 4		|abc|	ret : 3
+"%-*.*s"	*: 3 *: 1		|a  |	ret : 3
+"%-*.*s"	*: 4 *: 5		|abc |	ret : 4
+"%-*.*s"	*: 5 *: 1		|a    |	ret : 5
+"%-*.*s"	*: 6 *: 6		|abc   |	ret : 6
+"%-*.*s"	*:-1 *: 0		| |	ret : 1
+"%-*.*s"	*:-2 *: 4		|abc|	ret : 3
+"%-*.*s"	*:-3 *: 3		|abc|	ret : 3
+"%-*.*s"	*:-4 *: 3		|abc |	ret : 4
+"%-*.*s"	*: 4 *: 3		|abc |	ret : 4
+"%-*.*s"	*: 3 *: 5		|abc|	ret : 3
+"%-*.*s"	*: 2 *:-4		|abc|	ret : 3
+"%-*.*s"	*: 3 *:-1		|abc|	ret : 3
+"%-*.*s"	*: 4 *:-5		|abc |	ret : 4
+"%-*.*s"	*: 5 *:-1		|abc  |	ret : 5
+"%-*.*s"	*: 6 *:-6		|abc   |	ret : 6
+=====================================================

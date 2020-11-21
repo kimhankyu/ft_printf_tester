@@ -1,0 +1,123 @@
+TEST c
+=====================================================
+flag : X / Width : X / precision : X
+"%c"		|a|	ret : 1
+=====================================================
+flag : X / Width : X / precision : number
+undefined behavier
+"%.c"		|a|	ret : 1
+=====================================================
+flag : X / Width : X / precision : wildcard
+undefined behavier
+=====================================================
+flag : X / Width : number / precision : X
+"%1c"		|a|	ret : 1
+"%2c"		| a|	ret : 2
+"%3c"		|  a|	ret : 3
+"%4c"		|   a|	ret : 4
+"%5c"		|    a|	ret : 5
+"%6c"		|     a|	ret : 6
+=====================================================
+flag : X / Width : number / precision : number
+undefined behavier
+"%2.c"		| a|	ret : 2
+=====================================================
+flag : X / Width : number / precision : wildcard
+undefined behavier
+=====================================================
+flag : X / Width : wildcard / precision : X
+"%*c"	*: 0		|a|	ret : 1
+"%*c"	*: 1		|a|	ret : 1
+"%*c"	*: 2		| a|	ret : 2
+"%*c"	*: 3		|  a|	ret : 3
+"%*c"	*: 4		|   a|	ret : 4
+"%*c"	*: 5		|    a|	ret : 5
+"%*c"	*: 6		|     a|	ret : 6
+"%*c"	*:-1		|a|	ret : 1
+"%*c"	*:-2		|a |	ret : 2
+"%*c"	*:-3		|a  |	ret : 3
+"%*c"	*:-4		|a   |	ret : 4
+"%*c"	*:-5		|a    |	ret : 5
+"%*c"	*:-6		|a     |	ret : 6
+=====================================================
+flag : X / Width : wildcard / precision : number
+undefined behavier
+"%*.c"	*: 0		|a|	ret : 1
+=====================================================
+flag : X / Width : wildcard / precision : wildcard
+undefined behavier
+=====================================================
+flag : 0 / Width : X / precision : X
+undefined behavier
+=====================================================
+flag : 0 / Width : X / precision : number
+undefined behavier
+=====================================================
+flag : 0 / Width : X / precision : wildcard
+undefined behavier
+=====================================================
+flag : 0 / Width : number / precision : X
+undefined behavier
+=====================================================
+flag : 0 / Width : number / precision : number
+undefined behavier
+=====================================================
+flag : 0 / Width : number / precision : wildcard
+undefined behavier
+=====================================================
+flag : 0 / Width : wildcard / precision : X
+undefined behavier
+=====================================================
+flag : 0 / Width : wildcard / precision : number
+undefined behavier
+=====================================================
+flag : 0 / Width : wildcard / precision : wildcard
+undefined behavier
+=====================================================
+flag : - / Width : X / precision : X
+"%-c"		|a|	ret : 1
+=====================================================
+flag : - / Width : X / precision : number
+undefined behavier
+"%-.c"		|a|	ret : 1
+=====================================================
+flag : - / Width : X / precision : wildcard
+undefined behavier
+=====================================================
+flag : - / Width : number / precision : X
+"%-1c"		|a|	ret : 1
+"%-2c"		|a |	ret : 2
+"%-3c"		|a  |	ret : 3
+"%-4c"		|a   |	ret : 4
+"%-5c"		|a    |	ret : 5
+"%-6c"		|a     |	ret : 6
+=====================================================
+flag : - / Width : number / precision : number
+undefined behavier
+"%-2.c"		|a |	ret : 2
+=====================================================
+flag : - / Width : number / precision : wildcard
+undefined behavier
+=====================================================
+flag : - / Width : wildcard / precision : X
+"%-*c"	*: 0		|a|	ret : 1
+"%-*c"	*: 1		|a|	ret : 1
+"%-*c"	*: 2		|a |	ret : 2
+"%-*c"	*: 3		|a  |	ret : 3
+"%-*c"	*: 4		|a   |	ret : 4
+"%-*c"	*: 5		|a    |	ret : 5
+"%-*c"	*: 6		|a     |	ret : 6
+"%-*c"	*:-1		|a|	ret : 1
+"%-*c"	*:-2		|a |	ret : 2
+"%-*c"	*:-3		|a  |	ret : 3
+"%-*c"	*:-4		|a   |	ret : 4
+"%-*c"	*:-5		|a    |	ret : 5
+"%-*c"	*:-6		|a     |	ret : 6
+=====================================================
+flag : - / Width : wildcard / precision : number
+undefined behavier
+"%-*.c"	*: 0		|a|	ret : 1
+=====================================================
+flag : - / Width : wildcard / precision : wildcard
+undefined behavier
+=====================================================
