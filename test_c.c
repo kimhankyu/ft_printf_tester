@@ -11,7 +11,6 @@ void test_c()
 
     printf("=====================================================\n");
     printf("flag : X / Width : X / precision : number\n");
-    printf("undefined behavier\n");
     PRT(%.c, C);     //mac available
     // PRT(%.1c, C);
     // PRT(%.2c, C);
@@ -43,7 +42,6 @@ void test_c()
 
     printf("=====================================================\n");
     printf("flag : X / Width : number / precision : number\n");
-    printf("undefined behavier\n");
     PRT(%2.c, C);
     // PRT(%2.0c, C);
     // PRT(%2.3c, C);
@@ -93,7 +91,6 @@ void test_c()
 
     printf("=====================================================\n");
     printf("flag : X / Width : wildcard / precision : number\n");
-    printf("undefined behavier\n");
     PRT_W(%*.c, 0, C);
     // PRT_W(%*.0c, 1, C);
     // PRT_W(%*.4c, 2, C);
@@ -263,7 +260,6 @@ void test_c()
     PRT(%-c, C);
     printf("=====================================================\n");
     printf("flag : - / Width : X / precision : number\n");
-    printf("undefined behavier\n");
     PRT(%-.c, C);
     // PRT(%-.0c, C);
     // PRT(%-.1c, C);

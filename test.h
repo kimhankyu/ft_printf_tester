@@ -1,4 +1,3 @@
-
 #define DI      123
 #define C       'a'
 

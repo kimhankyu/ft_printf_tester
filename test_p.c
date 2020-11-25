@@ -5,7 +5,7 @@
 void test_p(void* p)
 {
     int ret;
-    printf("TEST xX\n");
+    printf("TEST p\n");
     printf("=====================================================\n");
     printf("flag : X / Width : X / precision : X\n");
     PRT(%p, p);

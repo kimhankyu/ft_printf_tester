@@ -1,0 +1,116 @@
+TEST p
+=====================================================
+flag : X / Width : X / precision : X
+"%p"		|0x0|	ret : 3
+=====================================================
+flag : X / Width : X / precision : number
+"%.p"		|0x|	ret : 2
+=====================================================
+flag : X / Width : X / precision : wildcard
+undefined behavier
+=====================================================
+flag : X / Width : number / precision : X
+"%1p"		|0x0|	ret : 3
+"%2p"		|0x0|	ret : 3
+"%3p"		|0x0|	ret : 3
+"%4p"		| 0x0|	ret : 4
+"%5p"		|  0x0|	ret : 5
+"%6p"		|   0x0|	ret : 6
+=====================================================
+flag : X / Width : number / precision : number
+"%2.p"		|0x|	ret : 2
+=====================================================
+flag : X / Width : number / precision : wildcard
+undefined behavier
+=====================================================
+flag : X / Width : wildcard / precision : X
+"%*p"	*: 0		|0x0|	ret : 3
+"%*p"	*: 1		|0x0|	ret : 3
+"%*p"	*: 2		|0x0|	ret : 3
+"%*p"	*: 3		|0x0|	ret : 3
+"%*p"	*: 4		| 0x0|	ret : 4
+"%*p"	*: 5		|  0x0|	ret : 5
+"%*p"	*:20		|                 0x0|	ret : 20
+"%*p"	*:-1		|0x0|	ret : 3
+"%*p"	*:-2		|0x0|	ret : 3
+"%*p"	*:-3		|0x0|	ret : 3
+"%*p"	*:-4		|0x0 |	ret : 4
+"%*p"	*:-5		|0x0  |	ret : 5
+"%*p"	*:-20		|0x0                 |	ret : 20
+=====================================================
+flag : X / Width : wildcard / precision : number
+"%*.p"	*: 0		|0x|	ret : 2
+=====================================================
+flag : X / Width : wildcard / precision : wildcard
+=====================================================
+flag : 0 / Width : X / precision : X
+undefined behavier
+=====================================================
+flag : 0 / Width : X / precision : number
+undefined behavier
+=====================================================
+flag : 0 / Width : X / precision : wildcard
+undefined behavier
+=====================================================
+flag : 0 / Width : number / precision : X
+undefined behavier
+=====================================================
+flag : 0 / Width : number / precision : number
+undefined behavier
+=====================================================
+flag : 0 / Width : number / precision : wildcard
+undefined behavier
+=====================================================
+flag : 0 / Width : wildcard / precision : X
+undefined behavier
+=====================================================
+flag : 0 / Width : wildcard / precision : number
+undefined behavier
+=====================================================
+flag : 0 / Width : wildcard / precision : wildcard
+undefined behavier
+=====================================================
+flag : - / Width : X / precision : X
+"%-p"		|0x0|	ret : 3
+=====================================================
+flag : - / Width : X / precision : number
+"%-.p"		|0x|	ret : 2
+=====================================================
+flag : - / Width : X / precision : wildcard
+undefined behavier
+=====================================================
+flag : - / Width : number / precision : X
+"%-1p"		|0x0|	ret : 3
+"%-2p"		|0x0|	ret : 3
+"%-3p"		|0x0|	ret : 3
+"%-4p"		|0x0 |	ret : 4
+"%-5p"		|0x0  |	ret : 5
+"%-6p"		|0x0   |	ret : 6
+=====================================================
+flag : - / Width : number / precision : number
+"%-2.p"		|0x|	ret : 2
+=====================================================
+flag : - / Width : number / precision : wildcard
+undefined behavier
+=====================================================
+flag : - / Width : wildcard / precision : X
+"%-*p"	*: 0		|0x0|	ret : 3
+"%-*p"	*: 1		|0x0|	ret : 3
+"%-*p"	*: 2		|0x0|	ret : 3
+"%-*p"	*: 3		|0x0|	ret : 3
+"%-*p"	*: 4		|0x0 |	ret : 4
+"%-*p"	*: 5		|0x0  |	ret : 5
+"%-*p"	*: 6		|0x0   |	ret : 6
+"%-*p"	*:-1		|0x0|	ret : 3
+"%-*p"	*:-2		|0x0|	ret : 3
+"%-*p"	*:-3		|0x0|	ret : 3
+"%-*p"	*:-4		|0x0 |	ret : 4
+"%-*p"	*:-5		|0x0  |	ret : 5
+"%-*p"	*:-6		|0x0   |	ret : 6
+=====================================================
+flag : - / Width : wildcard / precision : number
+"%-*.p"	*: 0		|0x|	ret : 2
+=====================================================
+flag : - / Width : wildcard / precision : wildcard
+undefined behavier
+=====================================================

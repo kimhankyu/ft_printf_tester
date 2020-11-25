@@ -21,7 +21,7 @@ void test_xX()
     PRT(%.4x, DI);
     PRT(%.5x, DI);
     PRT(%.6x, DI);
-    // PRT(%.-1d, DI);
+    // PRT(%.-1x, DI);
 
     printf("=====================================================\n");
     printf("flag : X / Width : X / precision : wildcard\n");
