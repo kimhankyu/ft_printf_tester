@@ -9,8 +9,8 @@ int main(void)
     // test_c();
     // test_s(NULL);
     // test_s(str);
-    test_p(&a);
-    // test_di();
+    // test_p(&a);
+    test_di();
     // test_u();
     // test_xX();
     // test_pers();

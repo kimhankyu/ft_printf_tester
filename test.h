@@ -1,4 +1,4 @@
-#define DI      123
+#define DI      -123
 #define C       'a'
 
 #define PRT_PER(F)   printf("\"%s\"\t\t|", #F); \

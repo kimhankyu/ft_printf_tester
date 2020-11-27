@@ -42,6 +42,8 @@ flag : X / Width : number / precision : number
 "%4.3d"		|-123|	ret : 4
 "%4.4d"		|-0123|	ret : 5
 "%4.5d"		|-00123|	ret : 6
+"%5.4d"		|-0123|	ret : 5
+"%10.5d"		|    -00123|	ret : 10
 =====================================================
 flag : X / Width : number / precision : wildcard
 "%2.*d"	*: 0		|-123|	ret : 4
@@ -158,6 +160,7 @@ flag : 0 / Width : number / precision : number
 "%04.3d"		|-123|	ret : 4
 "%04.4d"		|-0123|	ret : 5
 "%04.5d"		|-00123|	ret : 6
+"%05.4d"		|-0123|	ret : 5
 =====================================================
 flag : 0 / Width : number / precision : wildcard
 "%02.*d"	*: 0		|-123|	ret : 4
@@ -275,6 +278,7 @@ flag : - / Width : number / precision : number
 "%-4.3d"		|-123|	ret : 4
 "%-4.4d"		|-0123|	ret : 5
 "%-4.5d"		|-00123|	ret : 6
+"%-10.5d"		|-00123    |	ret : 10
 =====================================================
 flag : - / Width : number / precision : wildcard
 "%-2.*d"	*: 0		|-123|	ret : 4

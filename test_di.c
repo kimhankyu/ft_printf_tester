@@ -54,6 +54,8 @@ void test_di()
     PRT(%4.3d, DI);
     PRT(%4.4d, DI);
     PRT(%4.5d, DI);
+    PRT(%5.4d, DI);
+    PRT(%10.5d, DI);
 
     printf("=====================================================\n");
     printf("flag : X / Width : number / precision : wildcard\n");
@@ -179,6 +181,7 @@ void test_di()
     PRT(%04.3d, DI);
     PRT(%04.4d, DI);
     PRT(%04.5d, DI);
+    PRT(%05.4d, DI);
 
     printf("=====================================================\n");
     printf("flag : 0 / Width : number / precision : wildcard\n");
@@ -306,6 +309,7 @@ void test_di()
     PRT(%-4.3d, DI);
     PRT(%-4.4d, DI);
     PRT(%-4.5d, DI);
+    PRT(%-10.5d, DI);
 
     printf("=====================================================\n");
     printf("flag : - / Width : number / precision : wildcard\n");
